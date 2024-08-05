@@ -49,3 +49,32 @@ const people = [
 
 const ages = people.map(person => person.age )      // one-liner arrow function
 console.log(ages);
+
+// PASSING REFERENCE
+
+const getNames = (person) => person.name
+
+const names = people.map(getNames);
+
+console.log(names);
+
+// you can also return objects
+
+const newPeople = people.map((item) => {
+    return {
+        firstName: item.name.toUpperCase(),
+        oldAge: item.age * 20
+    }
+})
+console.log(newPeople);
+
+// returning HTML through MAP Method
+
+const nameArray = people.map((person) => `<h1>User name is : ${person.name}</h1>`);
+
+const result = document.querySelector("#result")
+
+// result.innerHTML = nameArray         // now if you look outpu in the browser, there will some weird , in between names, its bcs we are returning array. to remove this we will convert are array in string through Join()
+
+let str = nameArray + nameArray.join("")
+result.innerHTML =  str;
