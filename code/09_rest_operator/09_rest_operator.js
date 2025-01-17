@@ -54,4 +54,4 @@ const testScores =  [23,56,47,73];
 
 getAverage(person.name, ...testScores)
  
-//test commit from new laptop
+//test commit from new laptop second
